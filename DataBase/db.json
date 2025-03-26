@@ -1,0 +1,264 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "user": {
+        "id": "101",
+        "username": "john_doe",
+        "profile_pic": "src/assets/john.jpg"
+      },
+      "caption": "Flowers are the music of the ground. From Earth's lips, they speak. #rose ",
+      "image": "src/assets/post01.jpg",
+      "timestamp": "2025-03-25T10:30:00Z",
+      "likes": 150,
+      "comments": [
+        {
+          "user": "jane_smith",
+          "comment": "Looks amazing! Where is this?"
+        },
+        {
+          "user": "david_lee",
+          "comment": "Wow, great shot!"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "user": {
+        "id": "102",
+        "username": "susan_lee",
+        "profile_pic": "src/assets/susan.jpg"
+      },
+      "caption": "A flower does not pick itself, it just grows and shines. 🏞️ #nature #love ",
+      "image": "src/assets/post02.jpg",
+      "timestamp": "2025-03-24T16:45:00Z",
+      "likes": 200,
+      "comments": [
+        {
+          "user": "michael_brown",
+          "comment": "Incredible view!"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "user": {
+        "id": "103",
+        "username": "emma_james",
+        "profile_pic": "src/assets/emma.jpg"
+      },
+      "caption": "Nature does not hurry, yet everything is accomplished. 🌅 #goodvibes #naturelovers",
+      "image": "src/assets/post03.jpg",
+      "timestamp": "2025-03-23T18:00:00Z",
+      "likes": 300,
+      "comments": [
+        {
+          "user": "oliver_wilson",
+          "comment": "I want to be there right now!"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "user": {
+        "id": "104",
+        "username": "jass_03",
+        "profile_pic": "src/assets/susan.jpg"
+      },
+      "caption": "Mountai view along with sea . #sea #montain ",
+      "image": "src/assets/story1.jpg",
+      "timestamp": "2025-03-25T10:30:00Z",
+      "likes": 200,
+      "comments": [
+        {
+          "user": "jane_smith",
+          "comment": "Looks amazing! Where is this?"
+        },
+        {
+          "user": "david_lee",
+          "comment": "Wow, great shot!"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "user": {
+        "id": "105",
+        "username": "pakki_01",
+        "profile_pic": "src/assets/susan.jpg"
+      },
+      "caption": "Streets and Buildings are talking with Us. #love  ",
+      "image": "src/assets/story2.jpg",
+      "timestamp": "2025-03-25T10:30:00Z",
+      "likes": 450,
+      "comments": [
+        {
+          "user": "jane_smith",
+          "comment": "Looks amazing! Where is this?"
+        },
+        {
+          "user": "david_lee",
+          "comment": "Wow, great shot!"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "user": {
+        "id": "106",
+        "username": "suja_01",
+        "profile_pic": "src/assets/susan.jpg"
+      },
+      "caption": "Every sesons connected with oue life #life ",
+      "image": "src/assets/story4.jpg",
+      "timestamp": "2025-03-25T10:30:00Z",
+      "likes": 350,
+      "comments": [
+        {
+          "user": "jane_smith",
+          "comment": "Looks amazing! Where is this?"
+        },
+        {
+          "user": "david_lee",
+          "comment": "Wow, great shot!"
+        }
+      ]
+    }
+  ],
+  "profile": {
+    "id": "100",
+    "username": "SivaRock_1224",
+    "profile_pic": "/src/assets/ProfilePic.jpg"
+  },
+  "suggestion": [
+    {
+      "id": "101",
+      "username": "sivatheevan_24",
+      "profile_pic": "src/assets/john.jpg"
+    },
+    {
+      "id": "102",
+      "username": "jass_03",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "103",
+      "username": "pakki_01",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "104",
+      "username": "suja_01",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "105",
+      "username": "siva_24",
+      "profile_pic": "src/assets/emma.jpg"
+    },
+    {
+      "id": "106",
+      "username": "powjanan_16",
+      "profile_pic": "src/assets/john.jpg"
+    },
+    {
+      "id": "107",
+      "username": "saranja_20",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "108",
+      "username": "Arul_02",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "109",
+      "username": "Uma_03",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "110",
+      "username": "Appa_1202",
+      "profile_pic": "src/assets/emma.jpg"
+    }
+  ],
+  "story": [
+    {
+      "id": "1",
+      "user": {
+        "id": "101",
+        "username": "jass_03",
+        "profile_pic": "/src/assets/susan.jpg"
+      },
+      "image": "/src/assets/story1.jpg"
+    },
+    {
+      "id": "2",
+      "user": {
+        "id": "102",
+        "username": "pakki_01",
+        "profile_pic": "/src/assets/susan.jpg"
+      },
+      "image": "/src/assets/story2.jpg"
+    },
+    {
+      "id": "3",
+      "user": {
+        "id": "103",
+        "username": "suja_01",
+        "profile_pic": "/src/assets/susan.jpg"
+      },
+      "image": "/src/assets/story3.jpg"
+    },
+    {
+      "id": "4",
+      "user": {
+        "id": "104",
+        "username": "jana_16",
+        "profile_pic": "/src/assets/john.jpg"
+      },
+      "image": "/src/assets/story4.jpg"
+    },
+    {
+      "id": "5",
+      "user": {
+        "id": "105",
+        "username": "sanu_20",
+        "profile_pic": "/src/assets/susan.jpg"
+      },
+      "image": "/src/assets/story5.jpg"
+    },
+    {
+      "id": "6",
+      "user": {
+        "id": "106",
+        "username": "arul_02",
+        "profile_pic": "/src/assets/emma.jpg"
+      },
+      "image": "/src/assets/story6.jpg"
+    }
+  ],
+  "followers": [
+    {
+      "id": "108",
+      "username": "jass_03",
+      "profile_pic": "src/assets/susan.jpg"
+    },
+    {
+      "id": "109",
+      "username": "Uma_03"
+    },
+    {
+      "id": "108",
+      "username": "Arul_02"
+    },
+    {
+      "id": "106",
+      "username": "powjanan_16"
+    },
+    {
+      "id": "107",
+      "username": "saranja_20"
+    }
+  ]
+}
