@@ -1,21 +1,21 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import db from '../DataBase/db.json'
+
 function Profile() {
 
     const [profile, setProfile]= useState(null)
     const [followers,setFollowers]= useState([])
-    const [unfollowed,setUnfollowed]= useState([])
+    const [unfollowed,setUnfollowed]= useState(false)
 
      useEffect(() => {
-            axios.get('http://localhost:3000/profile')
-            .then(data=> {setProfile(data.data);
-            console.log(data)})
-            .catch(error=> console.log(error))
-
-            axios.get('http://localhost:3000/followers')
-            .then(data=> setFollowers(data.data))
-            .catch(error=> console.log(error))
-        }, [unfollowed])
+            // Load profile and followers from local db.json
+            try{
+                setProfile(db.profile || null)
+                setFollowers(db.followers || [])
+            }catch(err){
+                console.log('Failed to load local profile/followers', err)
+            }
+        }, [])
 
         function HandleOnChange(event){
             setProfile(prev => ({
@@ -23,16 +23,15 @@ function Profile() {
                 [event.target.name ]: event.target.value
             }))
         }
-        const handleUpdate = async ()=> {
-            axios.put('http://localhost:3000/profile',profile)
-            .then(console.log("updated"))
-            .catch(error => console.log(error))
+        const handleUpdate = ()=> {
+            // Local-only update: we update component state only since we don't have a backend
+            console.log('Profile updated locally', profile)
+            alert('Profile updated (local only)')
         }
-        const handleUnfollow = async (id)=> {
-            axios.delete(`http://localhost:3000/followers/${id}`)
-            .then(alert("UnFollowed"))
-            .then(setUnfollowed(!unfollowed))
-            .catch(error => console.log(error))
+        const handleUnfollow = (id)=> {
+            setFollowers(prev => prev.filter(f => String(f.id) !== String(id)))
+            setUnfollowed(prev => !prev)
+            alert('Unfollowed')
         }
 
   return (

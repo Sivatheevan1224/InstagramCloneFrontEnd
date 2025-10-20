@@ -58,4 +58,8 @@
 .arrow{
   font-size: 4rem;
 }
-
+.icons-sidebar i:hover,
+.icons-sidebar div:hover{
+  background: aqua;
+  color: black;
+}

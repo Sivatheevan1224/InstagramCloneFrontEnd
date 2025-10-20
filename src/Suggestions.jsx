@@ -1,42 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import db from '../DataBase/db.json'
 
 function Suggestions() {
   const[profile,setProfile]= useState(null)
   const [suggestions,setSuggestions]= useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:3000/profile').
-    then(data=> data.json()).
-    then(data => setProfile(data)).
-    catch(error=> console.log(error))
-
-    fetch('http://localhost:3000/suggestion').
-    then(data=> data.json()).
-    then(data => setSuggestions(data)).
-    catch(error=> console.log(error))
+    // Load profile and suggestions from local db.json
+    try{
+      setProfile(db.profile || null)
+      setSuggestions(db.suggestion || [])
+    }catch(err){
+      console.log('Failed to load local db profile/suggestions', err)
+    }
   },[])
 
-  // Function to handle Follow/Following toggle using className
-  /*function handleFollowClick(event) {
-    const followButton = event.target; // Get the clicked element
-    
-    // Toggle the class based on the current class
-    if (followButton.classList.contains('follow')) {
-      followButton.classList.remove('follow');
-      followButton.classList.add('following');
-      followButton.textContent = 'Following'; // Change text to "Following"
-    } else {
-      followButton.classList.remove('following');
-      followButton.classList.add('follow');
-      followButton.textContent = 'Follow'; // Change text back to "Follow"
-    }
-  }*/
+    // Legacy networked follow helper removed — using local state only now
 
-  const handleFollow = async(id,username,profile_pic)=>{
-    axios.post('http://localhost:3000/followers',{"id":id , "username":username, "profile_pic":profile_pic})
-    .then(alert('Followed'))
-    .catch(error => console.log(error))
+  const handleFollow = (id,username,profile_pic)=>{
+    // Update local suggestions state to simulate follow action
+    setSuggestions((prev)=> prev.filter(s => s.id !== id))
+    alert('Followed '+ username)
   }
   return (
     <div className='position-fixed'>
@@ -60,7 +44,7 @@ function Suggestions() {
                         <div className='d-flex'>
                             <img className="dp rounded-circle" src={suggestion.profile_pic} alt="Profile pic" />
                             <h5>{suggestion.username}</h5>
-                            <a onClick={()=>{handleFollow(suggestion.id,suggestion.username)}}  className=' text-primary ms-auto '>Follow</a>
+                            <a  onClick={()=>{handleFollow(suggestion.id,suggestion.username)}}  className=' followButton text-primary ms-auto '>Follow</a>
                         </div>
                     </div>
                 ))}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import db from '../DataBase/db.json'
 
 function Stories() {
   const[Stories,setStories]=useState([]);
@@ -7,11 +8,12 @@ function Stories() {
 
   let tot=0;
   useEffect(()=>{
-          fetch('http://localhost:3000/story').
-          then((data)=>data.json()).
-          then((data)=>setStories(data)).
-          catch(error => console.log(error))
-  
+          try{
+            setStories(db.story || [])
+          }catch(err){
+            console.log('Failed to load local stories', err)
+          }
+
       },[]);
   return (
     <div className='story d-flex'>

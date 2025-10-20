@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import db from '../DataBase/db.json'
 
 function Posts() {
 
     const [posts,setPosts]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/posts').
-        then((data)=>data.json()).
-        then((data)=>setPosts(data)).
-        catch(error => console.log(error))
+        // Load posts directly from local db.json
+        try{
+            setPosts(db.posts || [])
+        }catch(err){
+            console.log('Failed to load local db posts', err)
+        }
 
     },[]);
 
